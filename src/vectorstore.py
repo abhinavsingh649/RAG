@@ -4,7 +4,11 @@ import numpy as np
 import pickle
 from typing import List, Any
 from sentence_transformers import SentenceTransformer
-from src.embedding import EmbeddingPipeline
+
+try:
+    from src.embedding import EmbeddingPipeline
+except ModuleNotFoundError:
+    from embedding import EmbeddingPipeline
 
 
 class FAISSVectorStore:
